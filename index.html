@@ -25,8 +25,17 @@
     margin-bottom: 20px;
     box-shadow: 0 0 20px #00ffff;
   }
+  .info-message {
+    background: rgba(0, 0, 0, 0.5);
+    color: #00ffea;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: none; /* itaanza ikiwa hidden */
+  }
   .pair-code {
-    font-size: 20px;
+    font-size: 24px;
     background: rgba(0, 0, 0, 0.6);
     padding: 15px 25px;
     display: inline-block;
@@ -34,7 +43,7 @@
     margin-top: 20px;
     color: #00ffea;
     text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
   }
   button {
     margin-top: 20px;
@@ -72,13 +81,16 @@
 <body>
   <h1>𝗞𝗔𝗥𝗘𝗘𝗠💔-𝗧𝗘𝗖𝗛🌍</h1>
   <img src="https://files.catbox.moe/cfd5e0.jpg" alt="Kàrèèm">
-  <br>
+  
+  <div id="infoMessage" class="info-message">Tumia code hii kwenye WhatsApp device yako ili ku-pair.</div>
+  
   <input type="text" id="phoneNumber" placeholder="Ingiza namba yako">
   <br>
   <button onclick="pairNow()">Pata Pair Code</button>
   <button onclick="copyCode()">Copy Code</button>
   <div id="pairCode" class="pair-code">PAIR CODE ITAONEKANA HAPA</div>
   <div id="copyMsg"></div>
+
 <script>
 function pairNow() {
   var number = document.getElementById("phoneNumber").value.trim();
@@ -86,18 +98,16 @@ function pairNow() {
     alert("⚠️ Tafadhali ingiza namba yako kwanza!");
     return;
   }
-  var lastDigits = number.slice(-4);
-  var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var randomLetters1 = "";
-  var randomLetters2 = "";
-  for (var i = 0; i < 4; i++) {
-    randomLetters1 += letters.charAt(Math.floor(Math.random() * letters.length));
-    randomLetters2 += letters.charAt(Math.floor(Math.random() * letters.length));
+  var lettersNumbers = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  var code = "";
+  for (var i = 0; i < 8; i++) {
+    code += lettersNumbers.charAt(Math.floor(Math.random() * lettersNumbers.length));
   }
-  var code = "PAIR-" + lastDigits + "-" + randomLetters1 + "-" + randomLetters2;
   document.getElementById("pairCode").innerText = code;
-  document.getElementById("copyMsg").innerText = "";
+  document.getElementById("infoMessage").style.display = "block";
+  document.getElementById("copyMsg").innerText = ""; // futa copy msg kama ipo
 }
+
 function copyCode() {
   var code = document.getElementById("pairCode").innerText;
   if (code === "PAIR CODE ITAONEKANA HAPA") {

@@ -1,0 +1,110 @@
+{
+  "name": "Kàrèèm_Wèst💔-XMD-TECH🌍",
+  "description": "Best whatsapp bot💥 developed by kàrèèm tech🇹🇿",
+  "keywords": ["bot", "node", "baileys", "whatsapp"],
+  "logo": "https://files.catbox.moe/cfd5e0.jpg",
+  "repository": "https://github.com/ekitale/maths-project",
+  "success_url": "/",
+  "stack": "heroku-24",
+  "env": {
+    "PREFIX": {
+      "description": "Choose your prefix of bot",
+      "value": ".",
+      "required": true
+    },
+    "AUTO_READ_STATUS": {
+      "description": "Type yes to active or no to deactivate (lowercase only)",
+      "value": "yes",
+      "required": false
+    },
+    "AUTO_DOWNLOAD_STATUS": {
+      "description": "Type yes to active or no to deactivate (lowercase only)",
+      "value": "no",
+      "required": false
+    },
+    "AUTO_READ": {
+      "description": "Type yes to active or no to deactivate (lowercase only)",
+      "value": "no",
+      "required": false
+    },
+    "AUTO_REACT": {
+      "description": "Enter yes for your bot to auto react",
+      "value": "no",
+      "required": true
+    },
+    "ANTICALL": {
+      "description": "Enter yes for your bot to auto reject calls",
+      "value": "no",
+      "required": false
+    },
+    "AUTO_REACT_STATUS": {
+      "description": "Enter yes for your bot to auto like status",
+      "value": "yes",
+      "required": true
+    },
+    "PM_PERMIT": {
+      "description": "Type yes to block others from using bot in PM, or no to allow",
+      "value": "no",
+      "required": true
+    },
+    "BOT_NAME": {
+      "description": "Name of your bot",
+      "value": "Kàrèèm_Wèst💔-XMD-TECH🌍",
+      "required": true
+    },
+    "BOT_MENU_LINKS": {
+      "description": "Add one or more links separated by comma",
+      "value": "https://files.catbox.moe/cfd5e0.jpg",
+      "required": true
+    },
+    "PUBLIC_MODE": {
+      "description": "Type yes for public or no for private",
+      "value": "yes",
+      "required": true
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Your Heroku app name",
+      "required": false
+    },
+    "SESSION_ID": {
+      "description": "Session ID after scanning QR code",
+      "value": "",
+      "required": true
+    },
+    "OWNER_NAME": {
+      "description": "Your name",
+      "value": "Kàrèèm_Wèst💔-XMD-TECH🌍",
+      "required": true
+    },
+    "NUMERO_OWNER": {
+      "description": "Your number without +, with country code (e.g., 255...)",
+      "value": "255677915009",
+      "required": true
+    },
+    "WARN_COUNT": {
+      "description": "Limit of warn for warning commands",
+      "value": "3",
+      "required": false
+    },
+    "STARTING_BOT_MESSAGE": {
+      "description": "Put yes to enable starting message or no to disable",
+      "value": "yes",
+      "required": true
+    },
+    "PRESENCE": {
+      "description": "1 online, 2 typing, 3 recording, or blank for real state",
+      "value": "2",
+      "required": false
+    },
+    "ANTI_DELETE_MESSAGE": {
+      "description": "Put yes to enable anti delete message or no to disable",
+      "value": "no",
+      "required": true
+    }
+  },
+  "buildpacks": [
+    { "url": "heroku/nodejs" },
+    { "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git" },
+    { "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest" }
+  ]
+}

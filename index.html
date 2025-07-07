@@ -42,8 +42,15 @@
     𝗞𝗔𝗥𝗘𝗘𝗠💔-𝗧𝗘𝗖𝗛🌍
   </h1>
   <img src="https://files.catbox.moe/cfd5e0.jpg" alt="Kàrèèm">
-  <div class="pair-code">YOUR-PAIR-CODE-WILL-BE-HERE</div>
+  <div id="pairCode" class="pair-code">YOUR-PAIR-CODE-WILL-BE-HERE</div>
   <br>
-  <button onclick="alert('Pairing now...')">Pair Now</button>
+  <button onclick="pairNow()">Generate Pair Code</button>
+  
+  <script>
+    function pairNow() {
+      var code = "PAIR-" + Math.floor(Math.random() * 100000);
+      document.getElementById("pairCode").innerText = code;
+    }
+  </script>
 </body>
 </html>

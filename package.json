@@ -1,12 +1,16 @@
 {
-  "name": "kareem-west-bot",
+  "name": "kareem-xmd-bot",
   "version": "1.0.0",
-  "description": "Best WhatsApp bot 💥 developed by Kàrèèm Tech 🇹🇿",
+  "description": "Best whatsapp bot💥 developed by kàrèèm tech🇹🇿",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": ["bot", "whatsapp", "baileys", "nodejs"],
   "author": "Kàrèèm_Wèst💔-XMD-TECH🌍",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "baileys": "^5.0.0",
+    "chalk": "^5.0.0",
+    "dotenv": "^16.0.0"
+  }
 }

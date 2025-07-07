@@ -1,56 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>𝗞𝗔𝗥𝗘𝗘𝗠💔-𝗧𝗘𝗖𝗛🌍 Pair Code</title>
-  <style>
-    body {
-      background-color: #0d0d0d;
-      color: #00ffff;
-      font-family: 'Orbitron', sans-serif;
-      text-align: center;
-      padding: 40px;
-    }
-    img {
-      width: 200px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-    }
-    .pair-code {
-      font-size: 20px;
-      background: #222;
-      padding: 15px;
-      display: inline-block;
-      border-radius: 8px;
-      margin-top: 20px;
-    }
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 18px;
-      background: #00ffff;
-      color: #000;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>𝗞𝗔𝗥𝗘𝗘𝗠💔-𝗧𝗘𝗖𝗛🌍 Pair Code</title>
+<style>
+  body {
+    background: linear-gradient(135deg, #000428, #004e92);
+    color: #00ffff;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    padding: 40px;
+    min-height: 100vh;
+  }
+  h1 {
+    font-size: 32px;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #0088ff;
+    margin-bottom: 20px;
+  }
+  img {
+    width: 200px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px #00ffff;
+  }
+  .pair-code {
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 25px;
+    display: inline-block;
+    border-radius: 12px;
+    margin-top: 20px;
+    color: #00ffea;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+    letter-spacing: 1px;
+  }
+  button {
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background: linear-gradient(45deg, #00ffff, #0088ff);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #00ffff;
+  }
+  input {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid #00ffff;
+    background: #111;
+    color: #00ffff;
+    width: 220px;
+  }
+  #copyMsg {
+    color: #00ff88;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+</style>
 </head>
 <body>
-  <h1 style="font-size: 32px; color: #00ffff; text-shadow: 0 0 10px #00ffff;">
-    𝗞𝗔𝗥𝗘𝗘𝗠💔-𝗧𝗘𝗖𝗛🌍
-  </h1>
+  <h1>𝗞𝗔𝗥𝗘𝗘𝗠💔-𝗧𝗘𝗖𝗛🌍</h1>
   <img src="https://files.catbox.moe/cfd5e0.jpg" alt="Kàrèèm">
-  <div id="pairCode" class="pair-code">YOUR-PAIR-CODE-WILL-BE-HERE</div>
   <br>
-  <button onclick="pairNow()">Generate Pair Code</button>
-  
-  <script>
-    function pairNow() {
-      var code = "PAIR-" + Math.floor(Math.random() * 100000);
-      document.getElementById("pairCode").innerText = code;
-    }
-  </script>
+  <input type="text" id="phoneNumber" placeholder="Ingiza namba yako">
+  <br>
+  <button onclick="pairNow()">Pata Pair Code</button>
+  <button onclick="copyCode()">Copy Code</button>
+  <div id="pairCode" class="pair-code">PAIR CODE ITAONEKANA HAPA</div>
+  <div id="copyMsg"></div>
+<script>
+function pairNow() {
+  var number = document.getElementById("phoneNumber").value.trim();
+  if (number === "") {
+    alert("⚠️ Tafadhali ingiza namba yako kwanza!");
+    return;
+  }
+  var lastDigits = number.slice(-4);
+  var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var randomLetters1 = "";
+  var randomLetters2 = "";
+  for (var i = 0; i < 4; i++) {
+    randomLetters1 += letters.charAt(Math.floor(Math.random() * letters.length));
+    randomLetters2 += letters.charAt(Math.floor(Math.random() * letters.length));
+  }
+  var code = "PAIR-" + lastDigits + "-" + randomLetters1 + "-" + randomLetters2;
+  document.getElementById("pairCode").innerText = code;
+  document.getElementById("copyMsg").innerText = "";
+}
+function copyCode() {
+  var code = document.getElementById("pairCode").innerText;
+  if (code === "PAIR CODE ITAONEKANA HAPA") {
+    alert("⚠️ Hakuna code ya ku-copy. Tafadhali bonyeza 'Pata Pair Code' kwanza.");
+    return;
+  }
+  navigator.clipboard.writeText(code).then(function() {
+    document.getElementById("copyMsg").innerText = "✅ Code copied!";
+  }, function() {
+    alert("❌ Imeshindikana ku-copy. Tafadhali jaribu tena.");
+  });
+}
+</script>
 </body>
 </html>

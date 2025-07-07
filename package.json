@@ -1,0 +1,12 @@
+{
+  "name": "kareem-west-bot",
+  "version": "1.0.0",
+  "description": "Best WhatsApp bot 💥 developed by Kàrèèm Tech 🇹🇿",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["bot", "whatsapp", "baileys", "nodejs"],
+  "author": "Kàrèèm_Wèst💔-XMD-TECH🌍",
+  "license": "MIT"
+}

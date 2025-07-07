@@ -1,0 +1,31 @@
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files (hapa tunaficha secrets)
+.env
+
+# Local editor settings (VS Code, JetBrains, nk)
+.vscode/
+.idea/
+
+# Build artifacts (kama zipo)
+*.log
+
+# Heroku build artifacts (kama unazo)
+.heroku/
+
+# Optional: coverage reports
+coverage/
+
+# Optional: dependencies lockfiles kama hutumii
+# package-lock.json
+# yarn.lock
